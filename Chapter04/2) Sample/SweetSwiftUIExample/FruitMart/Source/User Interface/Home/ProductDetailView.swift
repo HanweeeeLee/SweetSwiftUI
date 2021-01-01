@@ -10,7 +10,9 @@ import SwiftUI
 
 struct ProductDetailView: View {
     let product: Product // 상품 정보를 전달받기 위한 프로퍼티 선언
-    
+  
+  // MARK: Body
+  
     var body: some View {
         VStack(spacing: 0) {
             productImage // 상품 이미지
@@ -18,6 +20,9 @@ struct ProductDetailView: View {
         }
         .edgesIgnoringSafeArea(.top) //세이프티 에이리어 무시
     }
+}
+
+extension ProductDetailView {
     
     var productImage: some View {
         GeometryReader { _ in
@@ -27,7 +32,7 @@ struct ProductDetailView: View {
         }
     }
     
-    var orderView: some View { // 상품 설명과 주문하기 버튼 등을 모두 포함하는 컨테이너
+    var orderView: some View {
         GeometryReader {
             VStack(alignment: .leading) {
                 self.productDescription // 상품명과 즐겨찾기 버튼(하트모양) 이미지
@@ -57,7 +62,7 @@ struct ProductDetailView: View {
                     .foregroundColor(Color.peach)
                     .frame(width: 32, height: 32)
             }
-            
+
             Text(splitText(product.description))
                 .foregroundColor(.secondaryText)
                 .fixedSize()
@@ -86,7 +91,8 @@ struct ProductDetailView: View {
       .foregroundColor(.black)
     }
     
-    var placeOrderButton: some View { //주문하기 버튼
+    //주문하기 버튼
+    var placeOrderButton: some View {
         Button(action: { }) {
             Capsule()
                 .fill(Color.peach)
@@ -100,9 +106,15 @@ struct ProductDetailView: View {
     }
     
 }
+// MARK: - Previews
 
 struct ProductDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProductDetailView(product: productSamples[0])
+  static var previews: some View {
+    let source1 = ProductDetailView(product: productSamples[0])
+    let source2 = ProductDetailView(product: productSamples[1])
+    return Group {
+      Preview(source: source1)
+      Preview(source: source2, devices: [.iPhone11Pro], displayDarkMode: false)
     }
+  }
 }
