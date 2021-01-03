@@ -11,6 +11,9 @@ import SwiftUI
 struct ProductDetailView: View {
     @State private var quantity: Int = 1
     let product: Product // 상품 정보를 전달받기 위한 프로퍼티 선언
+    
+    @State private var showingAlert: Bool = false
+    @EnvironmentObject private var store: Store
   
   // MARK: Body
   
@@ -20,6 +23,22 @@ struct ProductDetailView: View {
             orderView // 상품 정보를 출력하고 그 상품을 주문하기 위한 뷰
         }
         .edgesIgnoringSafeArea(.top) //세이프티 에이리어 무시
+        .alert(isPresented: $showingAlert, content: { confirmAlert })
+    }
+    
+    //알림창에 표시할 내용 정의
+    var confirmAlert: Alert {
+        Alert(title: Text("주문 확인"),
+              message: Text("\(product.name)을(를) \(quantity)개 구매하시겠습니까?"),
+              primaryButton: .default(Text("확인"), action: {
+                self.placeOrder()
+              }),
+              secondaryButton: .cancel(Text("취소")))
+    }
+    
+    //상품과 수량 정보를 placeOrder 메소드에 인수로 전달
+    func placeOrder() {
+        store.placeOrder(product: product, quantity: quantity)
     }
 }
 
@@ -93,7 +112,9 @@ extension ProductDetailView {
     
     //주문하기 버튼
     var placeOrderButton: some View {
-        Button(action: { }) {
+        Button(action: {
+            self.showingAlert = true
+        }) {
             Capsule()
                 .fill(Color.peach)
                 //너비는 주어진 공간을 최대로 사용하고 높이는 최소, 최대치 지정
