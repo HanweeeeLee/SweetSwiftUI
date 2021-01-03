@@ -60,10 +60,7 @@ private extension ProductRow {
                 + Text("\(product.price)").font(.headline)
             Spacer()
             //                    EmptyView() //어떠한 내용도 없는 뷰. StackView안에 뭐라도 들어가야하는데 넣을게 없을떄 넣는다.
-            Image(systemName: "heart") //하트 아이콘
-                .imageScale(.large)
-                .foregroundColor(Color("peach")) //에셋에 미리 포함해 둔 peach색 사용
-                .frame(width: 32, height: 32)
+            FavoriteButton(product: product)
             
             Image(systemName: "cart") //카트 아이콘
                 .foregroundColor(Color.peach)

@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct ProductDetailView: View {
+    @State private var quantity: Int = 1
     let product: Product // 상품 정보를 전달받기 위한 프로퍼티 선언
   
   // MARK: Body
@@ -57,10 +58,7 @@ extension ProductDetailView {
                     .foregroundColor(.black)
                 Spacer()
 
-                Image(systemName: "heart") // 즐겨찾기 버튼
-                    .imageScale(.large)
-                    .foregroundColor(Color.peach)
-                    .frame(width: 32, height: 32)
+                FavoriteButton(product: product)
             }
 
             Text(splitText(product.description))
@@ -82,11 +80,13 @@ extension ProductDetailView {
     }
     
     var priceInfo: some View {
-      HStack {
+        let price = quantity * product.price
+      return HStack {
         (Text("₩")
-          + Text("\(product.price)").font(.title)
+          + Text("\(price)").font(.title)
           ).fontWeight(.medium)
         Spacer()
+        QuantitySelector(quantity: $quantity)
       }
       .foregroundColor(.black)
     }
