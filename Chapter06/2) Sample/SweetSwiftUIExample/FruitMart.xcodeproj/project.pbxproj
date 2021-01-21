@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F51130D25B900D6007C03E6 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F51130C25B900D6007C03E6 /* Symbol.swift */; };
+		4F51131125B9020A007C03E6 /* ResizedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F51131025B9020A007C03E6 /* ResizedImage.swift */; };
 		5238EACC240BAC920079E99D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5238EACB240BAC920079E99D /* AppDelegate.swift */; };
 		5238EACE240BAC920079E99D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5238EACD240BAC920079E99D /* SceneDelegate.swift */; };
 		5238EAD0240BAC920079E99D /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5238EACF240BAC920079E99D /* Home.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F51130C25B900D6007C03E6 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
+		4F51131025B9020A007C03E6 /* ResizedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizedImage.swift; sourceTree = "<group>"; };
 		5238EAC8240BAC920079E99D /* FruitMart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruitMart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5238EACB240BAC920079E99D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5238EACD240BAC920079E99D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				78218014259F37A2003ED410 /* Preview.swift */,
+				4F51130C25B900D6007C03E6 /* Symbol.swift */,
+				4F51131025B9020A007C03E6 /* ResizedImage.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -216,7 +222,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1130;
-				ORGANIZATIONNAME = Giftbot;
+				ORGANIZATIONNAME = hanwe;
 				TargetAttributes = {
 					5238EAC7240BAC920079E99D = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -260,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F51131125B9020A007C03E6 /* ResizedImage.swift in Sources */,
 				78C815832597607B001699EB /* ProductRow.swift in Sources */,
 				5238EACC240BAC920079E99D /* AppDelegate.swift in Sources */,
 				78218015259F37A2003ED410 /* Preview.swift in Sources */,
@@ -271,6 +278,7 @@
 				5238EAD0240BAC920079E99D /* Home.swift in Sources */,
 				78C8158925976234001699EB /* ColorExtension.swift in Sources */,
 				78DDA84B25A194A90045E135 /* Order.swift in Sources */,
+				4F51130D25B900D6007C03E6 /* Symbol.swift in Sources */,
 				78C8158E2597641F001699EB /* Product.swift in Sources */,
 				78090AFE2599F4AA001219AE /* ProductDetailView.swift in Sources */,
 			);

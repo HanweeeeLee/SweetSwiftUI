@@ -25,9 +25,7 @@ struct FavoriteButton: View {
 //                .foregroundColor(.peach)
 //                .frame(width: 32, height: 32)
 //        }
-        Image(systemName: product.isFavorite ? "heart.fill" : "heart")
-            .imageScale(.large)
-            .foregroundColor(.peach)
+        Symbol(product.isFavorite ? "heart.fill" : "heart",scale: .large,color: .peach)
             .frame(width: 32, height: 32)
             .onTapGesture { self.store.toggleFavorite(of: self.product) }
     }

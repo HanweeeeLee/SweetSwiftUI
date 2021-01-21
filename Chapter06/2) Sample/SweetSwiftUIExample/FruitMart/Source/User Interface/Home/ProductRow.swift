@@ -27,9 +27,7 @@ struct ProductRow: View {
 
 private extension ProductRow {
     var productImage: some View {
-        Image(product.imageName)
-            .resizable()
-            .scaledToFill()
+        ResizedImage(product.imageName, contentMode: .fill, redneringMode: .original)
             .frame(width: 140)
             .clipped()
     }
@@ -62,8 +60,7 @@ private extension ProductRow {
             //                    EmptyView() //어떠한 내용도 없는 뷰. StackView안에 뭐라도 들어가야하는데 넣을게 없을떄 넣는다.
             FavoriteButton(product: product)
             
-            Image(systemName: "cart") //카트 아이콘
-                .foregroundColor(Color.peach)
+            Symbol("cart",color: Color.peach)
                 .frame(width: 32, height: 32)
             
         }
